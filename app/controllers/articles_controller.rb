@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.user = User.find_by_email(params[:article][:email])
 
     if @article.update(article_params)
       redirect_to @article
