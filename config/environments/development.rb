@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Whitelist IP used by sidekiq
+  config.web_console.whitelisted_ips = '10.0.2.2'
+
   # Always reload classes
   config.reload_classes_only_on_change = false
 

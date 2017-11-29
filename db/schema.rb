@@ -17,9 +17,7 @@ ActiveRecord::Schema.define(version: 20171129121632) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id"
     t.bigint "user_id"
-    t.index ["author_id"], name: "index_articles_on_author_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
