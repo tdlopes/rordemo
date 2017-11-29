@@ -22,6 +22,7 @@ class ArticleTest < ActiveSupport::TestCase
     article = Article.new
     article.title = 'Dummy Title'
     article.text = 'Dummy Text'
+    article.user = users(:tiago)
     assert article.save
   end
 end

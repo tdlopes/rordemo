@@ -25,6 +25,11 @@
     </p>
 
     <p>
+      <%= form.label :email %><br>
+      <%= form.text_field :email, value: @article.user.nil? ? '' : @article.user.email %>
+    </p>
+
+    <p>
       <%= form.submit %>
     </p>
 
