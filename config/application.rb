@@ -17,12 +17,12 @@ module Rordemo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    Raven.configure do |config|
-      config.dsn = 'https://9ace1ae1e8204c8b8dd5ad839fb1fcf2:f3609a3d22314a77b44cd9871fc03468@sentry.io/252894'
-    end
+
     logger = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = CustomFormat.new
     config.logger = ActiveSupport::TaggedLogging.new(logger)
+    config.active_record.logger = nil
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
